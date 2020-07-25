@@ -5,7 +5,7 @@ const passport = require("passport");
 
 const users = require("./routes/api/users");
 const admins = require("./routes/api/admins");
-const merchants = require("./routes/api/merchant");
+const merchants = require("./routes/api/merchants");
 
 const app = express();
 
