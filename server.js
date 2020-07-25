@@ -34,7 +34,7 @@ mongoose
 
 
 // Routes
-app.use("/apis", users);
+app.use("/users", users);
 
 
 // start server
