@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const passport = require("passport");
 
 const users = require("./routes/api/users");
 const admins = require("./routes/api/admins");
@@ -30,15 +29,14 @@ mongoose
   .catch(err => console.log(err));
 
 // Passport middleware
-app.use(passport.initialize());
+
 
 // Passport config
-require("./config/passport")(passport);
+
 
 // Routes
-app.use("/users", users);
-app.use("/admins", admins);
-app.use("/merchants", merchants);
+app.use("/apis", users);
+
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
