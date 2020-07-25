@@ -125,7 +125,7 @@ router.post("/aregister", (req, res) => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
     } else {
-      const newUser = new User({
+      const newUser = new Admn({
         name: req.body.name,
         role: req.body.role,
         email: req.body.email,
