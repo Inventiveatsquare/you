@@ -10,7 +10,7 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
-const User = require("../../models/User");
+const User = require("../../models/Merchant");
 
 // @route POST api/users/register
 // @desc Register user
@@ -93,9 +93,11 @@ router.post("/login", (req, res) => {
           },
           (err, token) => {
             res.json({
+             
               success: true,
               token: "Bearer " + token
-            });
+            })
+           
           }
         );
       } else {

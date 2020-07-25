@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const admins = require("./routes/api/admins");
+const merchants = require("./routes/api/merchant");
 
 const app = express();
 
@@ -22,7 +24,7 @@ const db = require("./config/keys").mongoURI;
 mongoose
   .connect(
     db,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
@@ -35,6 +37,8 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/users", users);
+app.use("/admins", admins);
+app.use("/merchants", merchants);
 
 // start server
 const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
