@@ -3,8 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const users = require("./routes/api/users");
-const admins = require("./routes/api/admins");
-const merchants = require("./routes/api/merchants");
+
 
 const app = express();
 
